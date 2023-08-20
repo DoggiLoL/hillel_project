@@ -1,18 +1,35 @@
 package edu.hillel.lesson4.HomeWork4;
 import java.util.Scanner;
 public class Dog extends Animal{
-static Scanner scan = new Scanner(System.in);
-    private final int maxRun = 500;
 
+    private static int dogCounter;
 
+    public Dog(){
+        dogCounter++;
+    }
 
-    private int maxSwim = 10;
-    public static void Run(int maxRun){
-        int runLength= scan.nextInt();
-        if(runLength > maxRun){
-            System.out.println("Собака не может пробежать - "+ runLength + " м." +"\n"+ "Максимальная длина бега - " + maxRun + " м.");
-        }else {
-            System.out.println("Cобака пробежала - " + runLength + " м.");
+    public static int getDogCounter() {
+        return dogCounter;
+    }
+
+    protected int maxDogDistanceRun = 500;
+    protected int maxDogDistanceSwim = 10;
+
+    @Override
+    void Run(int distance) {
+        if(distance <= maxDogDistanceRun){
+            System.out.println(name + " пробежал " + distance + "метров.");
+        } else {
+            System.out.println(name + " пробежал " + maxDogDistanceRun + "метров.");
+        }
+    }
+
+    @Override
+    void Swim(int distance) {
+        if(distance <= maxDogDistanceRun){
+            System.out.println(name + " проплыл " + distance + "метров.");
+        } else {
+            System.out.println(name + " проплыл " + maxDogDistanceSwim + "метров.");
         }
     }
 }
