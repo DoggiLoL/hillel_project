@@ -4,8 +4,9 @@ public class Cat extends Animal{
 
     private static int catCounter;
 
-    public Cat(){
+    public Cat(String name){
         catCounter++;
+        this.name = name;
     }
 
     public static int getCatCounter() {
@@ -18,15 +19,15 @@ public class Cat extends Animal{
     @Override
     void Run(int distance) {
         if(distance <= maxCatDistanceRun){
-            System.out.println(name + " пробежал " + distance + "метров.");
+            System.out.println(name + " пробежал " + distance + " метров.");
         } else {
-            System.out.println(name + " пробежал " + maxCatDistanceRun + "метров.");
+            System.out.println(name + " пробежал " + maxCatDistanceRun + " метров.");
         }
     }
 
     @Override
     void Swim(int distance) {
-        System.out.println(name + " проплыл " + getMaxCatDistanceSwim + "метров.");
+        System.out.println(name + " проплыл " + getMaxCatDistanceSwim + " метров.");
     }
 }
 

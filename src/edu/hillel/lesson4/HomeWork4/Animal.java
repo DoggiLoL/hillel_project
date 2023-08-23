@@ -5,6 +5,7 @@ abstract class Animal {
     private static int animalCounter;
     public  Animal(){
         animalCounter++;
+        this.name = name;
     }
 
     public static int getAnimalCounter() {
@@ -14,6 +15,7 @@ abstract class Animal {
     protected String name;
 
     public void setName(String name) {
+
         this.name = name;
     }
 
