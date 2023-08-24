@@ -32,7 +32,7 @@ public class HomeWorkApp {
         System.out.println("-----------");
 
         System.out.println("checkNumber");
-        checkNumber();
+        checkNumber(6);
 
         System.out.println("-----------");
 
@@ -91,26 +91,27 @@ public class HomeWorkApp {
     }
     //Написати метод, який приймає на вхід два цілих числа і перевіряє, що їхня сума лежить в межах від 10 до 20 (включно),
     //якщо так – повернути true, інакше – false.
-    protected static void checkSum(int a, int b){
+    protected static boolean checkSum(int a, int b){
         int c = a+b;
         if(c>=10 && c<=20){
-            System.out.println("true");;
+            return true;
         } else {
-            System.out.println("false");;
+            return false;
         }
     }
     //Написати метод, якому як параметр передається ціле число,
     // метод повинен надрукувати в консоль, чи додатнє число передали або від’ємне. Примітка: нуль вважаємо позитивним числом.
-    protected static void checkNumber(){
-        int a = rand.nextInt();
+    protected static void checkNumber(int a){
         if(a<0){
             System.out.println("Число отрицательное");
         }else {
             System.out.println("Число позитивное");
         }
     }
+    //Написати метод, якому як параметр передається ціле число.
+    // Метод повинен повернути true, якщо число є негативним, і повернути false якщо позитивне.
     protected static boolean checkNumb(int a){
-        if(a>=0){
+        if(a<0){
             return true;
         } else {
             return false;
@@ -124,6 +125,9 @@ public class HomeWorkApp {
             numberOfRow++;
         }
     }
+
+    //* Написати метод, який визначає, чи є рік високосним, і повертає boolean (високосний – true, не високосний – false).
+    // Кожен 4-й рік є високосним, крім кожного 100-го, причому кожен 400-й – високосний.
     protected static boolean isLeapYear(int year){
         if ((year % 4 == 0) && year % 100 != 0)
         {
