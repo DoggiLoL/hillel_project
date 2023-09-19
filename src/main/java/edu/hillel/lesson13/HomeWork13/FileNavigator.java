@@ -16,8 +16,10 @@ public class FileNavigator {
     protected void add(FileData file){
         if (!fileMap.containsKey(file.getPath())){
             fileMap.put(file.getPath(), new ArrayList<>());
-        }
+
+        } else {System.out.println("Error: Path not found in FileNavigator.");}
         fileMap.get(file.getPath()).add(file);
+
     }
 
     protected List<FileData> find(String path){
@@ -45,14 +47,4 @@ public class FileNavigator {
         files.sort((a, b) -> Long.compare(a.getSize(), b.getSize()));
         return files;
     }
-
-    protected boolean isConsistent(FileData file){
-        String path = file.getPath();
-        if(fileMap.containsKey(path)){
-            return true;
-        }
-        System.out.println("Error: Path not found in FileNavigator.");
-        return false;
-    }
-
 }
