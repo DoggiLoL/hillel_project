@@ -47,4 +47,5 @@ public class FileNavigator {
         files.sort((a, b) -> Long.compare(a.getSize(), b.getSize()));
         return files;
     }
+
 }
